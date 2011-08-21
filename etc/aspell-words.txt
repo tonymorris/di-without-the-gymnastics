@@ -1,23 +1,29 @@
-personal_ws-1.1 en 22 
+personal_ws-1.1 en 28 
+organization
 waivable
+AUTHORIZED
 synching
 Ssection
 phonogram
 sublicense
 Docbook
+recognizably
 Licence
 ShareAlike
 TODO
 pre
 NONINFRINGEMENT
+utilizing
 Unported
 PGP
 Licensor's
+honor
 dramatico
 MERCHANTIBILITY
 CCPL
 relicensing
 WIPO
+synchronization
 Licensor
 Berne
 phonograms

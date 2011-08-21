@@ -438,7 +438,7 @@ aspell skip x =
   unwords ([ 
              "aspell"
            , "--dont-backup"
-           , "--master=en_US"
+           , "--master=en_GB"
            , "--encoding=utf-8"
            , "--mode=sgml"
            , "-p"
