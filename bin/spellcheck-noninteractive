@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ghc -e "spellcheckNonInteractive c" Build.hs
+

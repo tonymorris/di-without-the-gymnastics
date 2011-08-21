@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ghc -e "chunkXhtml c" Build.hs
+

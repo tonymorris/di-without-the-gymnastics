@@ -1,0 +1,7 @@
+:l Build
+:m + Build
+:m + Build.Document
+:set -Wall
+:set prompt "λdocbook>> "
+
+

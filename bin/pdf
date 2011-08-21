@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ghc -e "pdf c" Build.hs
+

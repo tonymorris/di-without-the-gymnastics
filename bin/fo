@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ghc -e "fo c" Build.hs
+

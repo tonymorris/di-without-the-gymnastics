@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ghc -e "ps c" Build.hs
+

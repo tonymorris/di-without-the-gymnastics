@@ -1,0 +1,4 @@
+#!/bin/sh
+
+open "http://www.docbook.org/tdg/en/html/quickref.html"
+

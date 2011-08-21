@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ghc -e "getDependenciesIfNotGot c" Build.hs
+

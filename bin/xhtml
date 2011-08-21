@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ghc -e "xhtml c" Build.hs
+

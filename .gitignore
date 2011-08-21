@@ -1,0 +1,14 @@
+# idea
+
+.idea/workspace.xml
+.idea/ant.xml
+
+# folders
+
+dist
+lib
+
+# spelling
+spellingerrors
+
+

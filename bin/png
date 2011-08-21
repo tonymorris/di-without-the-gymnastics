@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ghc -e "png c" Build.hs
+
