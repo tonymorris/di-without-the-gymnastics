@@ -5,5 +5,5 @@ import Build.Document
 c :: 
   Config
 c = 
-  defaultConfig "docbook-document"
+  defaultConfig "docbook-document" "Docbook Document"
 

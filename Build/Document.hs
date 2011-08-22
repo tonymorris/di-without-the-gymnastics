@@ -28,6 +28,12 @@ import Control.Monad
 import Control.Applicative
 import System.FilePath.FilePather
 
+type Name =
+  String
+
+type Title =
+  String
+
 type Package =
   String
 
@@ -58,7 +64,8 @@ data Versions = Versions {
 } deriving (Eq, Show)
 
 data Config = Config {
-  name :: String
+  name :: Name
+, title :: Title
 , commitMessage :: String
 , params :: [(String, String)]
 , versions :: Versions
@@ -85,10 +92,11 @@ defaultVersions = Versions {
 }
 
 defaultConfig ::
-  String -- ^ The name.               
+  Name -- ^ The name.    
+  -> Title -- ^ The title.           
   -> Config
-defaultConfig n =
-  Config n
+defaultConfig n t =
+  Config n t
          "Automated Versioning"
          [
            ("html.stylesheet", takeFileName style)
