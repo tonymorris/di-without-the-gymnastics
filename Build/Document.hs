@@ -420,7 +420,7 @@ alll c =
   do -- mapM_ ($c) buildAll
      t <- readFile htmlIndex
      d <- getDirectoryContents (dist c </> "png")
-     let png = (\(i, c) -> "<li class=\"" ++ c : "\"><a href=\"png/index" ++ i ++ ".png\">Page</a></li>") =<< ([] : map show [2 .. length . filter ("index" `isPrefixOf`) $ d]) `zip` join (repeat "ox")
+     let png = (\(i, k) -> "<li class=\"" ++ k : "\"><a href=\"png/index" ++ i ++ ".png\">Page</a></li>") =<< ([] : map show [2 .. length . filter ("index" `isPrefixOf`) $ d]) `zip` join (repeat "ox")
      writeFile (dist c </> name c) (replace "$PNGPAGES" png $ replace "$TITLE" (title c) t)
 
 releaseBuild ::
