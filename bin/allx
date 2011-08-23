@@ -1,0 +1,5 @@
+#!/bin/sh
+
+ghc -e "alll c" Build.hs
+browse "dist/docbook-document/docbook-document"
+
