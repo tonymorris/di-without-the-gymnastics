@@ -421,7 +421,7 @@ alll c =
      t <- readFile htmlIndex
      d <- getDirectoryContents (dist c </> "png")
      let p = (\(i, k) -> "<li class=\"" ++ k : "\"><a href=\"png/index" ++ i ++ ".png\">Page</a></li>") =<< ([] : map show [2 .. length . filter ("index" `isPrefixOf`) $ d]) `zip` join (repeat "ox")
-     writeFile (dist c </> name c) (replace "$PNGPAGES" p $ replace "$TITLE" (title c) t)
+     writeFile (dist c </> name c ++ ".html") (replace "$PNGPAGES" p $ replace "$TITLE" (title c) t)
 
 releaseBuild ::
   FilePath
