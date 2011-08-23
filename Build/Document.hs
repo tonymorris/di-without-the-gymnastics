@@ -109,7 +109,7 @@ defaultConfig n t =
          , ("navig.showtitles", "0")
          ]
          defaultVersions
-         "https://github.com/tonymorris/docbook-dependencies/raw/2.0.0"
+         "https://raw.github.com/tonymorris/docbook-dependencies/2.0.0"
          True
 
 spellingErrors ::
