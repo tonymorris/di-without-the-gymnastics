@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <title>$TITLE</title>
+  <style media="screen" type="text/css">
+    body {
+      font-family: 'Myriad Pro', 'Trebuchet MS', Arial, sans-serif;
+      text-align: justify;
+    }
+
+    ol, ul, li {
+      list-style: square;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    li.o {
+      background: #e3e3e3;
+    }
+
+    li.x {
+      background: #c3c3c3;
+    }
+
+    a:link {
+      color:blue;
+      text-decoration:none;
+    }
+
+    a:visited {
+      color:blue;
+      text-decoration:none;
+    }
+
+    a:hover {
+      color:green;
+      text-decoration:none;
+    }
+
+    a:active {
+      color:blue;
+      text-decoration:none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>$TITLE</h1>
+  <ul>
+    <li class="o">
+      <p>
+        <a href="chunk-html/index.html">Multi-page HTML</a>
+      </p>
+    </li>
+    <li class="x">
+      <p>
+        <a href="html/index.html">Single-page HTML</a>
+      </p>
+    </li>
+    <li class="o">
+      <p>
+        <a href="ps/index.ps">Postscript</a>
+      </p>
+    </li>
+    <li class="x">
+      <p>
+        <a href="pdf/index.pdf">Portable Document Format (PDF)</a>
+      </p>
+    </li>
+    <li class="o">
+      <p>
+        <a href="rtf/index.rtf">Rich Text Format (RTF)</a>
+      </p>
+    </li>
+    <li class="x">
+      <p>
+        Portable Network Graphics (PNG)
+      </p>
+      <ol>
+        $PNGPAGES
+      </ol>
+    </li>
+    <li class="o">
+      <p>
+        <a href="pcl/index.pcl">Printer Command Language (PCL)</a>
+      </p>
+    </li>
+  </ul>
+</body>
+
+</html>
