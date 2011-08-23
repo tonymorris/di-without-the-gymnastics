@@ -1,0 +1,6 @@
+#!/bin/sh
+
+DOCBOOKREF=${1-index}
+
+browse "http://docbook.sourceforge.net/release/xsl/1.76.1/doc/html/$DOCBOOKREF.html"
+
