@@ -1,4 +1,6 @@
 #!/bin/sh
 
-open "http://www.docbook.org/tdg/en/html/quickref.html"
+DOCBOOKREF=${1-quickref}
+
+browse "http://www.docbook.org/tdg/en/html/$DOCBOOKREF.html"
 
