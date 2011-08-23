@@ -15,9 +15,11 @@ Requires on the PATH
 Requires packages (hackage)
 
 * FilePather
+* MissingH
 
 -}
 
+import Data.String.Utils hiding (join)
 import System.Cmd
 import System.Exit
 import System.FilePath
@@ -141,6 +143,11 @@ indexFile ::
   FilePath
 indexFile =
   docbooksrc </> "index.xml"
+
+htmlIndex ::
+  FilePath
+htmlIndex =
+  "etc" </> "index.html"
 
 resources ::
   FilePath
@@ -410,7 +417,11 @@ alll ::
 	Config
   -> IO ()
 alll c =
-	mapM_ ($c) buildAll
+  do -- mapM_ ($c) buildAll
+     t <- readFile htmlIndex
+     d <- getDirectoryContents (dist c </> "png")
+     let png = (\(i, c) -> "<li class=\"" ++ c : "\"><a href=\"png/index" ++ i ++ ".png\">Page</a></li>") =<< ([] : map show [2 .. length . filter ("index" `isPrefixOf`) $ d]) `zip` join (repeat "ox")
+     writeFile (dist c </> name c) (replace "$PNGPAGES" png $ replace "$TITLE" (title c) t)
 
 releaseBuild ::
   FilePath
