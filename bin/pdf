@@ -1,6 +1,5 @@
 #!/bin/sh
 
 ghc -e "pdf c" Build.hs
-openpdf dist/docbook-document/docbook-document.pdf &
 
 
