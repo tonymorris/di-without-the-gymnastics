@@ -417,7 +417,7 @@ alll ::
 	Config
   -> IO ()
 alll c =
-  do -- mapM_ ($c) buildAll
+  do mapM_ ($c) buildAll
      t <- readFile htmlIndex
      d <- getDirectoryContents (dist c </> "png")
      let p = (\(i, k) -> "<li class=\"" ++ k : "\"><a href=\"png/index" ++ i ++ ".png\">Page</a></li>") =<< ([] : map show [2 .. length . filter ("index" `isPrefixOf`) $ d]) `zip` join (repeat "ox")
