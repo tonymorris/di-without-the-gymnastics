@@ -365,31 +365,31 @@ pdf ::
   Config
   -> IO ExitCode
 pdf c =
-  fop' c "pdf" "pdf/index.pdf"
+  fop' c "pdf" ("pdf" </> "index.pdf")
 
 ps ::
   Config
   -> IO ExitCode
 ps c =
-  fop' c "ps" "ps/index.ps"
+  fop' c "ps" ("ps" </> "index.ps")
 
 pcl ::
   Config
   -> IO ExitCode
 pcl c =
-  fop' c "pcl" "pcl/index.pcl"
+  fop' c "pcl" ("pcl" </> "index.pcl")
 
 png ::
   Config
   -> IO ExitCode
 png c =
-  fop' c "png" "png/index.png"
+  fop' c "png" ("png" </> "index.png")
 
 rtf ::  
   Config
   -> IO ExitCode
 rtf c =
-  fop' c "rtf" "rtf/index.rtf"
+  fop' c "rtf" ("rtf" </> "index.rtf")
 
 clean ::
   IO ()
