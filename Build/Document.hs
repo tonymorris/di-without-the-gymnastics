@@ -106,6 +106,7 @@ defaultConfig n t =
          , ("body.font.family", "Delicious")
          , ("monospace.font.family", "Courier")
          , ("title.font.family", "Gentium Basic")
+         , ("navig.showtitles", "0")
          ]
          defaultVersions
          "https://github.com/tonymorris/docbook-dependencies/raw/2.0.0"
