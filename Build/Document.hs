@@ -17,6 +17,10 @@ Requires packages (hackage)
 * FilePather
 * MissingH
 
+Requires installed
+
+* Docbook 4.5 catalog (docbook-xml on debian/ubuntu systems)
+
 -}
 
 import Data.String.Utils hiding (join)
