@@ -210,27 +210,30 @@ uriDependencies c =
 
 getDependencies ::
   Config
-  -> IO ()
+  -> IO ExitCode
 getDependencies c =
   do mkdir lib
-     mapM_ (system' c . (\d -> unwords ["wget", "-P", lib, d])) . uriDependencies $ c
-     _ <- system' c (unwords [ "unzip -d "
-                             , lib
-                             , lib </> join ["docbook-xsl-", docbook_xsl . versions $ c, ".zip"]
-                             ])
-     _ <- let d = join ["docbook-xml-", docbook_xml . versions $ c]
-          in system' c (unwords [ "unzip -d "
-                                , lib </> d
-                                , lib </> join [d, ".zip"]
-                                ])
+     r <- fmap (\d -> unwords ["wget", "-P", lib, d]) (uriDependencies c) ++
+          [
+            unwords [ "unzip -d "
+                    , lib
+                    , lib </> join ["docbook-xsl-", docbook_xsl . versions $ c, ".zip"]
+                    ]
+          , unwords [ "rsync"
+                    , "-aH"
+                    , "xslt/"
+                    , lib </> join ["docbook-xsl-", docbook_xsl . versions $ c]
+                    ]
+          ] >--> c
      touch libGot
+     return r
 
 getDependenciesIfNotGot ::
   Config
-  -> IO ()
+  -> IO ExitCode
 getDependenciesIfNotGot c =
   do e <- doesFileExist libGot
-     unless e . getDependencies $ c
+     if e then return ExitSuccess else getDependencies c
 
 withDependencies ::
   Config
@@ -288,7 +291,7 @@ html ::
   Config
   -> IO ExitCode
 html =
-  markup "html/index.html" "html/docbook.xsl" "html"
+  markup "html/index.html" "html/docbook-utf8.xsl" "html"
 
 chunkHtml ::
   Config
@@ -300,7 +303,7 @@ xhtml ::
   Config
   -> IO ExitCode
 xhtml =
-  markup "xhtml/index.html" "xhtml/docbook.xsl" "xhtml"
+  markup "xhtml/index.html" "xhtml/docbook-utf8.xsl" "xhtml"
 
 chunkXhtml :: 
   Config
