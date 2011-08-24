@@ -400,14 +400,16 @@ cleanBuildTargets t c =
 
 alll ::
 	Config
-  -> IO ()
+  -> IO ExitCode
 alll c =
-  do mapM_ ($c) buildAll
-     t <- readFile htmlIndex
+  (squish . sequence buildAll) c >->
+  do t <- readFile htmlIndex
      d <- getDirectoryContents (dist c </> "png")
      let p = (\(i, k) -> "<li class=\"" ++ k : "\"><a href=\"png/index" ++ i ++ ".png\">Page</a></li>") =<< ([] : map show [2 .. length . filter ("index" `isPrefixOf`) $ d]) `zip` join (repeat "ox")
-     writeFile (dist c </> name c ++ ".html") (replace "$PNGPAGES" p $ replace "$TITLE" (title c) t)
-
+     r <- system' c (unwords ["tar -C ", build, " -zcf ", dist c </> archive c, " ", name c])
+     _ <- writeFile (dist c </> name c ++ ".html") (replace "$PNGPAGES" p $ replace "$TITLE" (title c) t)
+     return r
+ 
 releaseBuild ::
   FilePath
   -> [Config -> IO ExitCode]
@@ -544,12 +546,18 @@ exitWith' z =
   do e <- z
      exitWith e
 
+squish ::
+  [IO ExitCode]
+  -> IO ExitCode
+squish =
+  foldr (>->) (return ExitSuccess)
+
 (>-->) ::
   [String]
   -> Config
   -> IO ExitCode
 m >--> c =
-  foldr (\a b -> system' c a >-> b) (return ExitSuccess) m
+  squish (map (system' c) m)
 
 infixl 4 >-->
 
@@ -563,4 +571,5 @@ x >-> y =
        then y
        else return x'
 
+infixl 4 >->
 
