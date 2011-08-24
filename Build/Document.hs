@@ -1,27 +1,5 @@
 module Build.Document where
 
-{-
-
-Requires on the PATH
-
-* java
-* rsync
-* wget 
-* xsltproc
-* aspell
-* xmllint
-* tar
-
-Requires packages (hackage)
-
-* FilePather
-* MissingH
-
-Requires installed
-
-* Docbook 4.5 catalog (docbook-xml on debian/ubuntu systems)
-
--}
 
 import Data.String.Utils hiding (join)
 import System.Cmd
