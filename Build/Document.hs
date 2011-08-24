@@ -297,7 +297,7 @@ chunkHtml ::
   Config
   -> IO ExitCode
 chunkHtml =
-  markup "chunk-html/index.html" "html/chunk.xsl" "chunk-html"
+  markup "chunk-html/index.html" "html/docbook-chunk-utf8.xsl" "chunk-html"
 
 xhtml ::
   Config
@@ -309,7 +309,7 @@ chunkXhtml ::
   Config
   -> IO ExitCode
 chunkXhtml =
-  markup "chunk-xhtml/index.html" "xhtml/chunk.xsl" "chunk-xhtml"
+  markup "chunk-xhtml/index.html" "xhtml/docbook-chunk-utf8.xsl" "chunk-xhtml"
 
 fo ::
   Config
