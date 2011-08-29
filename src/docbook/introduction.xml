@@ -10,6 +10,30 @@
 <sect1>
   <title>Introduction</title>
   <para>
-    TODO &mdash; &ellipsis; &reg;
+    TODO
   </para>
+  <sect2>
+    <title>Section2</title>
+    <para>
+      &mdash;
+    </para>
+    <sect3>
+      <title>Section3</title>
+      <para>
+        &ellipsis;
+      </para>
+      <sect4>
+        <title>Section4</title>
+        <para>
+          &reg;
+        </para>
+      </sect4>
+    </sect3>
+  </sect2>
+  <sect2>
+    <title>Another Section2</title>
+    <para>
+      Boo
+    </para>
+  </sect2>
 </sect1>

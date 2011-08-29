@@ -1,7 +1,7 @@
-Docbook Document
-================
+WebRadar Document
+=================
 
-A template from which to create a Docbook document.
+A template from which to create a WebRadar technical document.
 
 Setting up
 ==========

@@ -3,8 +3,10 @@
 <!DOCTYPE articleinfo PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
     "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
 
-<articleinfo id="DocbookDocumentInfo" xmlns:xi="http://www.w3.org/2001/XInclude">
+<articleinfo id="WebRadarDocumentInfo" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!--
   <xi:include href="articleinfo/author/tony.xml"/>
+  -->
   <xi:include href="articleinfo/copyright.xml"/>
-  <title id="Title">Docbook Document</title>
+  <title id="Title">WebRadar Technical Document</title>
 </articleinfo>
