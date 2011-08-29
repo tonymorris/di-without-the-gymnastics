@@ -64,35 +64,11 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
+		font-size: 1.5em;
 		font-weight: bold;
 		color: #458100;
-		padding-top: 20px;
+		padding-top: 30px;
 		padding-bottom: 0;
-		margin:0;
-	}
-
-	h1 {
-		font-size: 2em;	
-	}
-
-	h2 {
-		font-size: 1.8em;
-	}
-
-	h3 {	
-		font-size: 1.6em;	
-	}
-
-	h4 {
-		font-size: 1.4em;	
-	}
-
-	h5 {
-		font-size: 1.2em;
-	}
-
-	h6 {
-		font-size: 1em;
 	}
 
 	a {
@@ -137,17 +113,12 @@
 
 	p {
 		line-height: 1.5em;
-		margin-top: 10px;
-		margin-bottom: 10px;
+		margin-top: 20px;
+		margin-bottom: 20px;
 	}
 
 	p b, .bold {
 		font-weight: bold;
-		color: #333;
-	}
-
-	.toc p {
-		margin: 0;
 	}
 
 	.note {
@@ -173,7 +144,7 @@
 	}
 
 	.titlepage p {
-		margin: 0 0 20px 0;
+		margin: 0;
 	}
 
 	.titlepage  {
@@ -207,9 +178,13 @@
 
 	.toc {
 		background-color: #fff;
-		clear: both;
-		line-height:2em;
-		margin-left: 2em;
+		clear: both;		
+	}
+
+	.toc dl dt {
+		padding-top:5px;
+		padding-bottom:5px;
+		padding-left: 30px;	
 	}
 
 	.navheader {
@@ -220,41 +195,18 @@
 		clear: both;
 	}
 
-	dt .sect1 {
+	.sect1 {
 		background-color: #fff;
 		clear: both;
-		margin-left: 0;
 	}
 
-	dt .sect2 {
+	.sect2 {
 		background-color: #fff;
 		clear: both;
-		margin-left: 2em;
 	}
 
-	dt .sect3 {
+	.sect3 {
 		background-color: #fff;
 		clear: both;
-		margin-left: 4em;
 	}
-
-	dt .sect4 {
-		background-color: #fff;
-		clear: both;
-		margin-left: 6em;
-	}
-
-	dt .sect5 {
-		background-color: #fff;
-		clear: both;
-
-		margin-left: 8em;
-	}
-
-	dt .sect6 {
-		background-color: #fff;
-		clear: both;
-		margin-left: 10em;
-	}
-
 

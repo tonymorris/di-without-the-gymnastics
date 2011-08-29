@@ -2,6 +2,6 @@
 :m + Build
 :m + Build.Document
 :set -Wall
-:set prompt "λwebradar>> "
+:set prompt "λdocbook>> "
 
 

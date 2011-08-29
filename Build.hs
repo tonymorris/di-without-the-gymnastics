@@ -5,5 +5,5 @@ import Build.Document
 c :: 
   Config
 c = 
-  defaultConfig "webradar-document" "WebRadar Technical Document"
+  defaultConfig "webradar-admin-guide" "WebRadar Administration Guide"
 

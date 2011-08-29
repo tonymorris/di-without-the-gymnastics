@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+    <!ENTITY mdash "&#2014;">
+    ]>
+
+<sect1 id="Configuration" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Configuration</title>
+  <sect2 id="InstallingALicense">
+    <title>Installing a License</title>
+    <para>
+      A WebRadar <emphasis>License</emphasis> is installed using the License link displayed via the <quote>Admin</quote> tab.
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="resources/images/license.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>
+      The <quote>Change</quote> button displays a text-area where you can paste your license provided by Ephox. The <quote>Validate</quote> button will store the license details in WebRadar.
+    </para>
+  </sect2>
+  <sect2 id="SchedulingDataExtraction">
+    <title>Scheduling Data Extraction</title>
+    <para>
+      Before you generate reports using WebRadar, you need to update the WebRadar cache with content from WCM. This caching is performed by the <quote>Data Extractor</quote> link, located under the <quote>Admin</quote> tab in WebRadar.
+    </para>
+    <para>
+      Caching data from WCM occurs automatically. The <quote>Cache Status</quote> field indicates whether WebRadar is currently caching data from WCM.
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="resources/images/data_extractor_general.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>
+      When WebRadar is currently rebuilding the cache then the progress of the extraction is shown in Cache status.
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="resources/images/data_extractor_rebuild.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>
+      Using the <quote>Select Libraries</quote> link WebRadar can be configured to cache specific WCM libraries.
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="resources/images/de_libraries_link.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>
+      Making any changes to the <emphasis>Select Libraries</emphasis> dialog and clicking the <quote>Update Cache</quote> button will schedule an update of the WebRadar cache to reflect the new selected library list.
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="resources/images/de_select_libraries.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <sect3>
+      <title>Scheduling Suspensions</title>
+      <para>
+        Scheduled suspensions specify periods of time when the extraction process will not occur. Use the <quote>Add Schedule</quote> button to add a new schedule.
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="resources/images/scheduled_suspensions.png" format="PNG"/>
+          </imageobject>
+        </mediaobject>
+      </para>
+    </sect3>
+    <sect3>
+      <title>Rebuilding Cache</title>
+      <para>
+        The <quote>Rebuild Cache</quote> button will completely rebuild the WebRadar cache used for reports. Use this button if you feel your WebRadar cache (populated by extractions) has been corrupted. <quote>Rebuild Cache</quote> performs a complete and comprehensive data extraction, which may take a significant amount of time. Also, the data visible in WebRadar will not be an accurate reflection of all content in the selected WCM libraries until this extraction is complete.
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="resources/images/de_rebuild_button.png" format="PNG"/>
+          </imageobject>
+        </mediaobject>
+      </para>
+    </sect3>
+  </sect2>
+  <sect2 id="SubscriptionEmailConfiguration">
+    <title>Subscription Email Configuration</title>
+    <para>
+      The <quote>Email Configuration</quote> tab allows you to modify the settings required for WebRadar to be able to send email subscriptions to its users. There are four options that can be modified:
+      <itemizedlist>
+        <listitem>
+          <para>
+            Subscription Run Time &mdash; The time each day when you wish subscription emails to be sent out. A choice of starting times ranging between <code>00:00</code> (12am) and <code>23:45</code> (11:45pm) at 15 minute intervals.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            SMTP Server &mdash; The mail server you would like to use to dispatch mail.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Username &mdash; <emphasis>Optional</emphasis> username for the SMTP if your server requires one.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Password &mdash; <emphasis>Optional</emphasis> password for the SMTP if your server requires one.
+          </para>
+        </listitem>
+      </itemizedlist>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="resources/images/adminEmail.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+  </sect2>
+</sect1>

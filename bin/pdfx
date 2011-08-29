@@ -1,6 +1,6 @@
 #!/bin/sh
 
 ghc -e "pdf c" Build.hs
-openpdf dist/webradar-document/pdf/index.pdf &
+openpdf dist/webradar-admin-guide/pdf/index.pdf &
 
 

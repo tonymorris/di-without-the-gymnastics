@@ -5,7 +5,7 @@ projectRoot="$here/.."
 r=`cd "$projectRoot" && pwd`
 p="$r/package"
 p2="$p/docs/en"
-s="$r/dist/webradar-document"
+s="$r/dist/webradar-admin-guide/chunk-html"
 
 (
   cabal install filepather && \

@@ -1,5 +1,5 @@
 #!/bin/sh
 
 ghc -e "alll c" Build.hs
-browse "dist/webradar-document/webradar-document"
+browse "dist/webradar-admin-guide/webradar-admin-guide"
 
