@@ -1,7 +1,7 @@
-Docbook Document
-================
+WebRadar Administration Documentation
+=====================================
 
-A template from which to create a Docbook document.
+WebRadar administraton documentation is written using docbook.
 
 Setting up
 ==========
