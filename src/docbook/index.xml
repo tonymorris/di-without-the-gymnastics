@@ -6,7 +6,8 @@
                "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2001/XInclude'">
 ]>
 
-<article id="WebRadarDocument" xmlns:xi="http://www.w3.org/2001/XInclude">
+<article id="WebRadarAdminGuide" xmlns:xi="http://www.w3.org/2001/XInclude">
   <xi:include href="articleinfo.xml"/>
-  <xi:include href="introduction.xml"/>
+  <xi:include href="Configuration.xml"/>
+  <xi:include href="RequestingSupport.xml"/>
 </article>

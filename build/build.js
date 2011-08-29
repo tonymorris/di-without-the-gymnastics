@@ -1,4 +1,4 @@
-var p = Ent.Project.create("webradardocument", "external");
+var p = Ent.Project.create("webradaradminguide", "external");
 p.setVersion(3, 1, 0);
 
 
