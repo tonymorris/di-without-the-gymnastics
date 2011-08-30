@@ -1,7 +1,7 @@
-WebRadar Administration Documentation
-=====================================
+Docbook Document
+================
 
-WebRadar administraton documentation is written using docbook.
+A template from which to create a Docbook document.
 
 Setting up
 ==========
@@ -27,8 +27,3 @@ Ubuntu/Debian shortcut for setting up
 Run this command to get started:
 > `sudo apt-get install openjdk-6-jdk ghc6 cabal-install rsync wget xsltproc docbook-xml aspell libxml2-utils tar && cabal update && cabal install cabal-install && cabal install FilePather && cabal install MissingH`
 
-Mac shortcut for setting up
----------------------------
-Requires macports
-
-> `sudo port install aspell && sudo port install aspell-dict-uk && cabal update && cabal install cabal-install && cabal install FilePather && cabal install MissingH` 

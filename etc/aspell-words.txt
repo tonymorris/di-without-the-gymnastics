@@ -1,4 +1,4 @@
-personal_ws-1.1 en 34 
+personal_ws-1.1 en 28 
 organization
 waivable
 AUTHORIZED
@@ -12,24 +12,18 @@ Licence
 ShareAlike
 TODO
 pre
-WCM
 NONINFRINGEMENT
-WebRadar
-dialog
 utilizing
 Unported
 PGP
 Licensor's
-SMTP
 honor
 dramatico
 MERCHANTIBILITY
 CCPL
 relicensing
-username
 WIPO
 synchronization
 Licensor
 Berne
 phonograms
-Ephox
