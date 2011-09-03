@@ -126,15 +126,15 @@ indexFile ::
 indexFile =
   docbooksrc </> "index.xml"
 
-htmlIndex ::
-  FilePath
-htmlIndex =
-  "etc" </> "index.html"
-
 webDir ::
   FilePath
 webDir =
   "etc" </> "web"
+
+htmlIndex ::
+  FilePath
+htmlIndex =
+  "etc" </> "$NAME.html"
 
 resources ::
   FilePath
@@ -407,28 +407,30 @@ alll ::
 	Config
   -> IO ExitCode
 alll c =
-  (squish . sequence buildAll) c >->
-  do t <- readFile htmlIndex
-     d <- getDirectoryContents (dist c </> "png")
-     let p = (\(i, k) -> "<li class=\"" ++ k : "\"><a href=\"png/index" ++ i ++ ".png\">Page</a></li>") =<< ([] : map show [2 .. length . filter ("index" `isPrefixOf`) $ d]) `zip` join (repeat "ox")
-     r <- system' c (unwords ["tar -C ", build, " -zcf ", build </> archive c, " ", name c])
-     _ <- writeFile (dist c </> name c ++ ".html") (replace "$NAME" (name c) $ replace "$PNGPAGES" p $ replace "$TITLE" (title c) t)
-     return r
+  (squish . sequence buildAll) c
 
 web ::
   Config
   -> IO ExitCode
 web c =
+  alll c >->
   do h <- find always (extensionEq "html") webDir
      mapM_ (\p -> let p' = joinPath . drop (length . splitPath $ webDir) . splitPath $ p
                       d = takeDirectory p'
-                  in do mkdir d
+                  in do mkdir (build </> d)
                         f <- readFile p
                         let z = replace' f [("$TITLE", title c), ("$NAME", name c)]
-                        writeFile (dist c </> p') z) h
+                        writeFile (build </> p') z) h
      r <- find always (extensionSatisfies $ \p -> takeExtension p /= ".html") webDir
-     mapM_ (\p -> print . joinPath . drop (length . splitPath $ webDir) . splitPath $ p) r
-     return ExitSuccess
+     p' <- filterM doesFileExist r
+     mapM_ (\p -> let z = joinPath . drop (length . splitPath $ webDir) . splitPath $ p 
+                  in do mkdir (build </> takeDirectory z)
+                        copyFile p (build </> z)) p'
+     t <- readFile htmlIndex
+     d <- getDirectoryContents (dist c </> "png")
+     let pngh = (\(i, k) -> "<li class=\"" ++ k : "\"><a href=\"" ++ name c ++ "png/index" ++ i ++ ".png\">Page</a></li>") =<< ([] : map show [2 .. length . filter ("index" `isPrefixOf`) $ d]) `zip` join (repeat "ox")
+     writeFile (build </> name c ++ ".html") (replace' t [("$NAME", name c), ("$PNGPAGES", pngh), ("$TITLE", title c)])
+     system' c (unwords ["tar -C ", build, " -zcf ", build </> archive c, " ", name c])
 
 releaseBuild ::
   FilePath
