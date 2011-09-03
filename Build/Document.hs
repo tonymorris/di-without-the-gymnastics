@@ -308,13 +308,13 @@ xhtml ::
   Config
   -> IO ExitCode
 xhtml =
-  markup "xhtml/index.html" "xhtml/docbook-utf8.xsl" "xhtml"
+  markup "xhtml/index.html" "html/docbook-utf8.xsl" "xhtml"
 
 chunkXhtml :: 
   Config
   -> IO ExitCode
 chunkXhtml =
-  markup "chunk-xhtml/index.html" "xhtml/docbook-chunk-utf8.xsl" "chunk-xhtml"
+  markup "chunk-xhtml/index.html" "html/docbook-chunk-utf8.xsl" "chunk-xhtml"
 
 fo ::
   Config
