@@ -1,24 +1,87 @@
+div.navheader table {
+  background-color:#eee;
+}
+
+div.navheader th  {
+  font-family:georgia, Verdana, Arial, serif;
+  font-weight:bold;
+}
+
+div.navheader td  {
+  font-family:georgia, Verdana, Arial, serif;
+  font-weight:normal;
+}
+
+div.navfooter table {
+  background-color:#eee;
+}
+
+div.navfooter th  {
+  font-family:georgia, Verdana, Arial, serif;
+  font-weight:bold;
+}
+
+div.navfooter td  {
+  font-family:georgia, Verdana, Arial, serif;
+  font-weight:normal;
+}
+
+div.revhistory table, div.revhistory tr, div.revhistory td, div.revhistory th {
+  font-size:18px;
+}
+
+div.table-contents table {
+  padding: 5px;
+}
+
+div.blockquote table {
+  border: 0;
+}
+
 tr, td, th {
   font-size:24px;
+  border-width: 1px;
 }
 
 body {
-	background-color: White;
-	color: Black;
-	padding: 24px;
-	width: auto;
-	text-align: justify;
+  color: #000;
+  font-size:18px;
+  line-height:25px;
+  font-family:'Lucida Grande', Verdana, Arial, sans-serif;
+  background-color:#fff;
+  margin: 15px;
 }
 
-body, p, td, li, dt, dd, .copyright, .pubdate, div.legalnotice {
-	font: 12px/18px Verdana, Arial, Helvetica, Sans-Serif;
+h1 {
+  font-size:60px;
+  line-height:60px;
+  font-family:georgia, Verdana, Arial, serif;
+  margin-bottom:15px;
+  font-weight:normal;
 }
 
+h2 {
+  font-size:60px;
+  line-height:70px;
+  margin-bottom:15px;
+  font-family:georgia, Verdana, Arial, serif;
+  color:black;
+}
 
-table {
-  border-collapse: collapse;
-  border: 1px solid #778899;
-  font-size: x-small;
+h3 {
+  font-size:40px;
+  line-height:40px;
+  margin-bottom:15px;
+  font-family:georgia, Verdana, Arial, serif;
+  color:black;
+}
+
+p {
+  margin-bottom:25px;
+}
+
+a:hover {
+  text-decoration:none;
 }
 
 ul {
@@ -45,7 +108,9 @@ pre.programlisting {
   color:white;
   background: #000 no-repeat top right;
   font-family:Monaco, Consolas, "Courier New", monospace;
+  font-size:24px;
   font-weight: bold;
+  line-height:28px;
   padding:5px 10px;
   margin-bottom:25px;
 }
@@ -64,10 +129,6 @@ a[accesskey=n], a[accesskey=p], a[accesskey=h], a[accesskey=u] {
   background-color:#ddd;
   font-weight:normal;
   padding: 2px;
-}
-
-.termdef {
-  font-family: serif;
 }
 
 .blockquote {
@@ -89,17 +150,4 @@ a[accesskey=n], a[accesskey=p], a[accesskey=h], a[accesskey=u] {
 
 .subtitle {
   font-size: medium;
-}
-
-div.revhistory table td {
-  font-size: xx-small;
-}
-
-div.revhistory table th {
-  font-size: xx-small;
-}
-
-div.procedure .procedure li.step p.exercise {
-  color: #00008b;
-  font-weight:bold;
 }
