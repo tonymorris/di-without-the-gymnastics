@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ghc -e "web c" Build.hs
+
