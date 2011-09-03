@@ -7,7 +7,7 @@ import System.Exit
 import System.FilePath
 import System.Directory
 import System.IO
-import Data.List
+import Data.List hiding (find)
 import Control.Monad
 import Control.Applicative
 import System.FilePath.FilePather
@@ -130,6 +130,11 @@ htmlIndex ::
   FilePath
 htmlIndex =
   "etc" </> "index.html"
+
+webDir ::
+  FilePath
+webDir =
+  "etc" </> "web"
 
 resources ::
   FilePath
@@ -409,7 +414,22 @@ alll c =
      r <- system' c (unwords ["tar -C ", build, " -zcf ", build </> archive c, " ", name c])
      _ <- writeFile (dist c </> name c ++ ".html") (replace "$NAME" (name c) $ replace "$PNGPAGES" p $ replace "$TITLE" (title c) t)
      return r
- 
+
+web ::
+  Config
+  -> IO ExitCode
+web c =
+  do h <- find always (extensionEq "html") webDir
+     mapM_ (\p -> let p' = joinPath . drop (length . splitPath $ webDir) . splitPath $ p
+                      d = takeDirectory p'
+                  in do mkdir d
+                        f <- readFile p
+                        let z = replace' f [("$TITLE", title c), ("$NAME", name c)]
+                        writeFile (dist c </> p') z) h
+     r <- find always (extensionSatisfies $ \p -> takeExtension p /= ".html") webDir
+     mapM_ (\p -> print . joinPath . drop (length . splitPath $ webDir) . splitPath $ p) r
+     return ExitSuccess
+
 releaseBuild ::
   FilePath
   -> [Config -> IO ExitCode]
@@ -573,3 +593,10 @@ x >-> y =
 
 infixl 4 >->
 
+replace' ::
+  String
+  -> [(String, String)]  
+  -> String
+replace' =
+  foldl' (\s (x, y) -> replace x y s)
+  
