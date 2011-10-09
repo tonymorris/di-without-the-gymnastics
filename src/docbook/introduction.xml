@@ -12,11 +12,4 @@
   <para>
     TODO &mdash; &ellipsis; &reg;
   </para>
-  <programlisting language="java">
-class Boo {
-  public String method() {
-    final int x = 7;
-    return "abc" + x;
-  }
-}</programlisting>
 </sect1>
