@@ -45,6 +45,7 @@ data Versions = Versions {
 , xml_apis :: Version
 , xml_apis_ext :: Version
 , xmlgraphics_commons :: Version
+, xslthl :: Version
 } deriving (Eq, Show)
 
 data Config = Config {
@@ -73,6 +74,7 @@ defaultVersions = Versions {
 , xml_apis = "1.3.04"
 , xml_apis_ext = "1.3.04"
 , xmlgraphics_commons = "1.4"
+, xslthl = "2.0.2"
 }
 
 defaultConfig ::
@@ -91,6 +93,7 @@ defaultConfig n t =
          , ("monospace.font.family", "Courier")
          , ("title.font.family", "Gentium Basic")
          , ("navig.showtitles", "0")
+         , ("highlight.source", "1")
          ]
          defaultVersions
          "https://raw.github.com/tonymorris/docbook-dependencies/2.0.0"
