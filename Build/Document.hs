@@ -428,7 +428,7 @@ web c =
                         copyFile p (build </> z)) p'
      t <- readFile htmlIndex
      d <- getDirectoryContents (dist c </> "png")
-     let pngh = (\(i, k) -> "<li class=\"" ++ k : "\"><a href=\"" ++ name c ++ "png/index" ++ i ++ ".png\">Page</a></li>") =<< ([] : map show [2 .. length . filter ("index" `isPrefixOf`) $ d]) `zip` join (repeat "ox")
+     let pngh = (\(i, k) -> "<li class=\"" ++ k : "\"><a href=\"" ++ name c ++ "/png/index" ++ i ++ ".png\">Page</a></li>") =<< ([] : map show [2 .. length . filter ("index" `isPrefixOf`) $ d]) `zip` join (repeat "ox")
      writeFile (build </> name c ++ ".html") (replace' t [("$NAME", name c), ("$PNGPAGES", pngh), ("$TITLE", title c)])
      system' c (unwords ["tar -C ", build, " -zcf ", build </> archive c, " ", name c])
 
