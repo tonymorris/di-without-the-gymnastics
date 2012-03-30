@@ -5,5 +5,5 @@ import Build.Document
 c :: 
   Config
 c = 
-  defaultConfig "docbook-document" "Docbook Document"
+  defaultConfig "di-without-the-gymnastics" "Dependency Injection Without the Gymnastics"
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/docbook-document.iml" filepath="$PROJECT_DIR$/docbook-document.iml" />
+      <module fileurl="file://$PROJECT_DIR$/di-without-the-gymnastics.iml" filepath="$PROJECT_DIR$/di-without-the-gymnastics.iml" />
     </modules>
   </component>
 </project>

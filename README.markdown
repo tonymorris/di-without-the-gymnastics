@@ -1,7 +1,6 @@
-Docbook Document
+Dependency Injection Without the Gymnastics
 ================
 
-A template from which to create a Docbook document.
 
 To get started, perform the following:
 
