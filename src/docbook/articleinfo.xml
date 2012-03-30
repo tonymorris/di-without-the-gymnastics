@@ -7,4 +7,5 @@
   <xi:include href="articleinfo/author/tony.xml"/>
   <xi:include href="articleinfo/copyright.xml"/>
   <title id="Title">Docbook Document</title>
+  <xi:include href="articleinfo/abstract.xml"/>
 </articleinfo>
