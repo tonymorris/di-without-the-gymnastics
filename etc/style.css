@@ -1,153 +1,276 @@
-div.navheader table {
-  background-color:#eee;
-}
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
 
-div.navheader th  {
-  font-family:georgia, Verdana, Arial, serif;
-  font-weight:bold;
-}
-
-div.navheader td  {
-  font-family:georgia, Verdana, Arial, serif;
-  font-weight:normal;
-}
-
-div.navfooter table {
-  background-color:#eee;
-}
-
-div.navfooter th  {
-  font-family:georgia, Verdana, Arial, serif;
-  font-weight:bold;
-}
-
-div.navfooter td  {
-  font-family:georgia, Verdana, Arial, serif;
-  font-weight:normal;
-}
-
-div.revhistory table, div.revhistory tr, div.revhistory td, div.revhistory th {
-  font-size:18px;
-}
-
-div.table-contents table {
-  padding: 5px;
-}
-
-div.blockquote table {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
   border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-tr, td, th {
-  font-size:24px;
-  border-width: 1px;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
 }
 
 body {
-  color: #000;
-  font-size:18px;
-  line-height:25px;
-  font-family:'Lucida Grande', Verdana, Arial, sans-serif;
-  background-color:#fff;
-  margin: 15px;
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table  tr, table td {
+  height: 35px;
+}
+
+html {
+  background-color: #f0f0f0;
+}
+
+body {
+  width: 1260px;
+  margin: 0 auto;
+
+  background-color: #fff;
+  background-position: top;
+  background-repeat: none;
+
+  font-family: 'Myriad Pro', 'Trebuchet MS', arial, sans-serif;
+  text-align: left;
+  color: #333;
+
+  border-left: 1px solid #bbb;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+
+  padding: 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #450081;
+  padding-top: 20px;
+  padding-bottom: 0;
+  margin: 0;
+  text-align: center;
 }
 
 h1 {
-  font-size:60px;
-  line-height:60px;
-  font-family:georgia, Verdana, Arial, serif;
-  margin-bottom:15px;
-  font-weight:normal;
+  font-size: 3em;
 }
 
 h2 {
-  font-size:60px;
-  line-height:70px;
-  margin-bottom:15px;
-  font-family:georgia, Verdana, Arial, serif;
-  color:black;
+  font-size: 2.8em;
 }
 
 h3 {
-  font-size:40px;
-  line-height:40px;
-  margin-bottom:15px;
-  font-family:georgia, Verdana, Arial, serif;
-  color:black;
+  font-size: 1.6em;
 }
 
-p {
-  margin-bottom:25px;
+h4 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1.4em;
+}
+
+h6 {
+  font-size: 1.3em;
+}
+
+a {
+  text-decoration: none;
+  color: #1CEE86;
+  outline-style: none;
 }
 
 a:hover {
-  text-decoration:none;
+  text-decoration: underline;
+}
+
+img {
+  border-style: none;
+}
+
+img a {
+  border-style: none;
 }
 
 ul {
-  list-style-type:disc;
-  margin:25px 25px;
+  list-style-type: decimal;
+  margin-left: 26px;
+  margin-top: 10px;
 }
 
-img.right {
-  float: right;
-  margin:10px;
+ol {
+  padding: 0;
+  margin-left: 26px;
+  margin-top: 10px;
+  width: 90%;
 }
 
-img.left {
-  float: left;
-  margin:10px;
+li {
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 
-img.center {
-  margin:10px auto 25px auto;
-  display:block;
+li img {
+  padding-bottom: 10px;
+}
+
+p {
+  line-height: 1.5em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+p b, .bold {
+  font-weight: bold;
+  color: #333;
+}
+
+.toc p {
+  margin: 0;
+}
+
+.note {
+  color: #666;
+  font-style: italic;
+}
+
+.note p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.note h3 {
+  color: #333;
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: 1.1em;
+}
+
+.titlepage {
+  clear: both;
+  background-color: #7828bb;
+}
+
+.titlepage p {
+  margin: 0 0 20px 0;
+}
+
+.titlepage {
+  background-color: #fff;
+}
+
+.article {
+  width: 90%;
+  clear: both;
+  background-color: #fff;
+}
+
+.article img {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.copyright {
+  clear: both;
+  color: #999;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+hr {
+  border: 1px;
+  color: #bbbbbb;
+  clear: both;
+  padding: 0;
+  margin: 0;
+}
+
+.toc {
+  background-color: #fff;
+  clear: both;
+  line-height: 2em;
+  margin-left: 2em;
+}
+
+.navheader {
+  clear: both;
+}
+
+.navfooter {
+  clear: both;
+}
+
+dt .sect1 {
+  background-color: #fff;
+  clear: both;
+  margin-left: 0;
+}
+
+dt .sect2 {
+  background-color: #fff;
+  clear: both;
+  margin-left: 2em;
+}
+
+dt .sect3 {
+  background-color: #fff;
+  clear: both;
+  margin-left: 4em;
+}
+
+dt .sect4 {
+  background-color: #fff;
+  clear: both;
+  margin-left: 6em;
+}
+
+dt .sect5 {
+  background-color: #fff;
+  clear: both;
+
+  margin-left: 8em;
+}
+
+dt .sect6 {
+  background-color: #fff;
+  clear: both;
+  margin-left: 10em;
 }
 
 pre.programlisting {
-  color:white;
-  background: #000 no-repeat top right;
-  font-family:Monaco, Consolas, "Courier New", monospace;
-  font-size:24px;
-  font-weight: bold;
-  line-height:28px;
-  padding:5px 10px;
-  margin-bottom:25px;
-}
-
-a[accesskey=n], a[accesskey=p], a[accesskey=h], a[accesskey=u] {
-  font-family:georgia, Verdana, Arial, serif;
-  font-weight:bold;
-  font-size:medium;
-  background-color: #E0E0E0;
-  color: darkgray;
+  background: #f3f3f3 no-repeat top right;
+  font-family: Monaco, Consolas, "Courier New", monospace;
+  padding: 5px 10px;
+  margin-bottom: 25px;
+  overflow: auto;
 }
 
 .code {
   white-space:nowrap;
   font-family:Monaco, Consolas, "Courier New", monospace;
-  background-color:#ddd;
+  background-color:#f3f3f3;
   font-weight:normal;
   padding: 2px;
-}
-
-.blockquote {
-  font-style: italic;
-}
-
-.caption {
-  font-size: medium;
-}
-
-.footnote {
-  font-size:small;
-  font-weight:bold;
-}
-
-.xref {
-  font-size:small;
-}
-
-.subtitle {
-  font-size: medium;
 }
