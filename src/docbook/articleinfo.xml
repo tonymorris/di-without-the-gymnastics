@@ -7,5 +7,6 @@
   <xi:include href="articleinfo/author/tony.xml"/>
   <xi:include href="articleinfo/copyright.xml"/>
   <title id="Title">Dependency Injection Without the Gymnastics</title>
+  <subtitle id="Subtitle">Functional Programming Applied</subtitle>
   <xi:include href="articleinfo/abstract.xml"/>
 </articleinfo>
