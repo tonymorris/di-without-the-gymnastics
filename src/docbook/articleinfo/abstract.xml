@@ -4,7 +4,14 @@
     "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
 
 <abstract>
+  <title>Philadelphia Emerging Technologies for the Enterprise &mdash; April 10-11, 2012</title>
   <para>
-    TODO
+    In this talk, we take a look at some specific Functional Programming patterns that regularly arise in everyday programming. These patterns are used to solve the same problems that DI attempts to by decoupling data types from their dependencies.
+  </para>
+  <para>
+    We explore the algebraic properties of these techniques and discover how they give rise to useful programming properties that we may apply in our typical work. This talk focuses on the techniques rather than any particular programming language, since none of these techniques are monopolized by a specific language. Various programming languages will be used for demonstration to emphasize this point; Haskell, Scala, Java and C# for example.
+  </para>
+  <para>
+    The audience should expect to walk away from this talk with a slight amount of bewilderment, a clear understanding of some FP subjects, but importantly, with the invigorated inspiration to explore these techniques further.
   </para>
 </abstract>
