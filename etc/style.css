@@ -16,6 +16,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   line-height: 1;
+  font-size: x-large;
 }
 
 ol, ul {
@@ -262,6 +263,7 @@ dt .sect6 {
 pre.programlisting {
   background: #f3f3f3 no-repeat top right;
   font-family: Monaco, Consolas, "Courier New", monospace;
+  font-size: xx-large;
   padding: 5px 10px;
   margin-bottom: 25px;
   overflow: auto;
@@ -273,4 +275,8 @@ pre.programlisting {
   background-color:#f3f3f3;
   font-weight:normal;
   padding: 2px;
+}
+
+.footnote {
+  font-style: italic;
 }
