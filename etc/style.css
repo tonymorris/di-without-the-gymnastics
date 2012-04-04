@@ -16,6 +16,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   line-height: 1;
+  font-size: x-large;
 }
 
 ol, ul {
@@ -273,4 +274,8 @@ pre.programlisting {
   background-color:#f3f3f3;
   font-weight:normal;
   padding: 2px;
+}
+
+.footnote {
+  font-style: italic;
 }
