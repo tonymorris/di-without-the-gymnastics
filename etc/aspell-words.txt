@@ -1,4 +1,4 @@
-personal_ws-1.1 en 32 
+personal_ws-1.1 en 36 
 organization
 waivable
 AUTHORIZED
@@ -14,9 +14,11 @@ ShareAlike
 TODO
 pre
 NONINFRINGEMENT
+runtime
 utilizing
 monopolized
 Unported
+monads
 PGP
 Licensor's
 honor
@@ -26,8 +28,10 @@ dramatico
 MERCHANTIBILITY
 CCPL
 relicensing
+StateT
 WIPO
 synchronization
 Licensor
 Berne
 phonograms
+ReaderT
