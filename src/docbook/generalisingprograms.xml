@@ -40,11 +40,11 @@ for {
   d &lt;- e2(b)
 } yield d</programlisting>
     <para>
-      We can transform our programs like this by wrapping them in <code>Identity</code>.
+      We can transform our programs like this by wrapping values (<code>e1</code>, etc.) in <code>Identity</code>.
       <programlisting>
 case class Identity[A](a: A) {
-  def map[B](f:A=>B): Identity[B] = Identity(f(a))
-  def flatMap[B](f:A=>Identity[B]): Identity[B] = f(a)
+  def map[B](f: A => B): Identity[B] = Identity(f(a))
+  def flatMap[B](f: A => Identity[B]): Identity[B] = f(a)
 }</programlisting>
     </para>
   </sect2>
