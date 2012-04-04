@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<sect1 id="GeneralisingPrograms" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Generalising Programs</title>
+  <sect2>
+    <title>A Trivial Program</title>
+    <programlisting>
+val a = e1
+val b = e2(a)
+val c = e3(a, b)
+val d = e2(b)</programlisting>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Remove the <code>val</code> keyword.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Replace the <code>=</code> symbol with <code>&lt;-</code>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Wrap the program in <code>for</code> and <code>yield</code> keywords.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>A Trivial Program in Identity</title>
+    <programlisting>
+for {
+  a &lt;- e1
+  b &lt;- e2(a)
+  c &lt;- e3(a, b)
+  d &lt;- e2(b)
+} yield d</programlisting>
+    <para>
+      We can transform our programs like this by wrapping them in <code>Identity</code>.
+      <programlisting>
+case class Identity[A](a: A) {
+  def map[B](f:A=>B): Identity[B] = Identity(f(a))
+  def flatMap[B](f:A=>Identity[B]): Identity[B] = f(a)
+}</programlisting>
+    </para>
+  </sect2>
+</sect1>
