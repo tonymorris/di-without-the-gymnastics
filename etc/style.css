@@ -263,6 +263,7 @@ dt .sect6 {
 pre.programlisting {
   background: #f3f3f3 no-repeat top right;
   font-family: Monaco, Consolas, "Courier New", monospace;
+  font-size: xx-large;
   padding: 5px 10px;
   margin-bottom: 25px;
   overflow: auto;
