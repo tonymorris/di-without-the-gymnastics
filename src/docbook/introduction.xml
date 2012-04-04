@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
-      <!ENTITY mdash "&#8212;">
-      <!ENTITY ellipsis "&#8230;">
-      <!ENTITY reg "&#174;">
-    ]>
+    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
 
-<sect1>
+<sect1 id="Introduction" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Introduction</title>
   <para>
-    TODO &mdash; &ellipsis; &reg;
+    An introduction to Reader, ReaderT, State and StateT monads to solve the problem that dependency injection sets out to solve.
   </para>
 </sect1>

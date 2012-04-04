@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<sect1 id="WhatisDI" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>What is Dependency Injection?</title>
+  <itemizedlist>
+    <listitem>
+      <para>
+        Dependency injection often comes in two forms:
+        <orderedlist>
+          <listitem>
+            <para>
+              Applications require a read-only <emphasis>context</emphasis>, which is initialised before the dependent application starts.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              Applications require a read/write <emphasis>context</emphasis>, which is initialised before the dependent application starts.
+            </para>
+          </listitem>
+        </orderedlist>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        In both cases, the DI runtime guarantees that the context initialisation will occur at the right time &mdash; this is the essential guarantee of dependency injection.<footnote>
+          <para>
+            Dependency injection is just socially-acceptable global variables &mdash; Anon
+          </para>
+        </footnote>
+      </para>
+    </listitem>
+  </itemizedlist>
+</sect1>
