@@ -116,7 +116,7 @@ img a {
 }
 
 ul {
-  list-style-type: decimal;
+  list-style-type: square;
   margin-left: 26px;
   margin-top: 10px;
 }
