@@ -5,32 +5,60 @@
 
 <sect1 id="WhatisDI" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>What is Dependency Injection?</title>
-  <itemizedlist>
-    <listitem>
-      <para>
-        Dependency injection often comes in two forms:
-        <orderedlist>
-          <listitem>
+  <sect2>
+    <title>The Essence of DI</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Dependency injection often comes in two forms:
+          <orderedlist>
+            <listitem>
+              <para>
+                Applications require a read-only <emphasis>context</emphasis>, which is initialised before the dependent application starts.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                Applications require a read/write <emphasis>context</emphasis>, which is initialised before the dependent application starts.
+              </para>
+            </listitem>
+          </orderedlist>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          In both cases, the DI runtime guarantees that the context initialisation will occur at the right time &mdash; this is the essential guarantee of dependency injection.<footnote>
             <para>
-              Applications require a read-only <emphasis>context</emphasis>, which is initialised before the dependent application starts.
+              Dependency injection is just socially-acceptable global variables &mdash; Anon
             </para>
-          </listitem>
-          <listitem>
-            <para>
-              Applications require a read/write <emphasis>context</emphasis>, which is initialised before the dependent application starts.
-            </para>
-          </listitem>
-        </orderedlist>
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-        In both cases, the DI runtime guarantees that the context initialisation will occur at the right time &mdash; this is the essential guarantee of dependency injection.<footnote>
-          <para>
-            Dependency injection is just socially-acceptable global variables &mdash; Anon
-          </para>
-        </footnote>
-      </para>
-    </listitem>
-  </itemizedlist>
+          </footnote>
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Gymnastics</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Personally, I have seen <emphasis>all sorts</emphasis> of gymnastics in an effort to provide this guarantee.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          After all, if it is broken at any time, the program <emphasis role="bold">crashes spectacularly</emphasis>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Let's be honest &mdash; it never eventuates consistently &mdash; it's just a global variable with all the usual dangers.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          OK then &mdash; pass arguments through explicitly &mdash; clumsy?
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
 </sect1>
