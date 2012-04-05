@@ -10,7 +10,7 @@
     <itemizedlist>
       <listitem>
         <para>
-          Dependency injection often comes in two forms:
+          Dependency injection often comes in two general forms:
           <orderedlist>
             <listitem>
               <para>
@@ -32,6 +32,11 @@
               Dependency injection is just socially-acceptable global variables &mdash; Anon
             </para>
           </footnote>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The rest is uninteresting implementation detail and quasi-arguments over XML.
         </para>
       </listitem>
     </itemizedlist>
