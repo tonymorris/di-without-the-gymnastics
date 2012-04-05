@@ -48,4 +48,34 @@ case class Identity[A](a: A) {
 }</programlisting>
     </para>
   </sect2>
+  <sect2>
+    <title>Add a Bit of Context</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          OK, so if <code>e1</code> was of the type <code>Int</code>, it now becomes <code>Identity[Int]</code> and so on.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          but <code>Identity</code> is quite a boring context.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Are there more structures that add more interesting context to values of any type?
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Reader</title>
+    <programlisting>
+case class CtxRead[A](rd: Context => A) {
+  def map[B](f: A => B): CtxRead[B] =
+      CtxRead(f compose rd)
+  def flatMap[B](f: A => CtxRead[B]): CtxRead[B] =
+      CtxRead(c => f(rd(c)) rd c)
+}</programlisting>
+  </sect2>
 </sect1>
