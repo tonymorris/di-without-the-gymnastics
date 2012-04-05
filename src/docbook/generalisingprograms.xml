@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"[
+    <!ENTITY ellipsis "&#8230;">
+]>
 
 <sect1 id="GeneralisingPrograms" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Generalising Programs</title>
@@ -71,11 +73,50 @@ case class Identity[A](a: A) {
   <sect2>
     <title>Reader</title>
     <programlisting>
-case class CtxRead[A](rd: Context => A) {
-  def map[B](f: A => B): CtxRead[B] =
-      CtxRead(f compose rd)
-  def flatMap[B](f: A => CtxRead[B]): CtxRead[B] =
-      CtxRead(c => f(rd(c)) rd c)
+case class Read[A](rd: Context => A) {
+  def map[B](f: A => B): Read[B] =
+      Read(f compose rd)
+  def flatMap[B](f: A => Read[B]): Read[B] =
+      Read(c => f(rd(c)) rd c)
 }</programlisting>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Now values that were once typed <code>T</code> becomes values with the type <code>Read[T]</code>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          In other words, these values can access a <code>Context</code> to produce their result.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          &ellipsis;and most importantly&ellipsis;
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Reader Monad</title>
+    <programlisting>
+for {
+  a &lt;- e1
+  b &lt;- e2(a)
+  c &lt;- e3(a, b)
+  d &lt;- e2(b)
+} yield d</programlisting>
+    <itemizedlist>
+      <listitem>
+        <para>
+          &ellipsis;the program remains unchanged!
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Here, we are computing values with a context available, but <emphasis>without explicitly passing it through our program</emphasis>.
+        </para>
+      </listitem>
+    </itemizedlist>
   </sect2>
 </sect1>
