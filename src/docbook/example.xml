@@ -7,38 +7,64 @@
 
 <sect1 id="Example" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Example</title>
-  <itemizedlist>
-    <listitem>
-      <para>
-        Can we find an example good enough to demonstrate the point, but small enough to fit on slides?! :)
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-        Let our context be <code>(String, Int)</code> to denote host and non-standard port.
-      </para>
-    </listitem>
-    <listitem>
-      <para>
-        We are going to <emphasis>inject</emphasis> this read-only dependency into our program, so that:
-        <itemizedlist>
-          <listitem>
-            <para>
-              values that require access to it can do so
-            </para>
-          </listitem>
-          <listitem>
-            <para>
-              the dependency is not explicitly passed around our program
-            </para>
-          </listitem>
-          <listitem>
-            <para>
-              our program maintains <emphasis>referential transparency</emphasis> &mdash; <emphasis>no variables</emphasis>, and therefore, the benefits that follow
-            </para>
-          </listitem>
-        </itemizedlist>
-      </para>
-    </listitem>
-  </itemizedlist>
+  <sect2>
+    <title>A simple enough example?</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Can we find an example good enough to demonstrate the point, but small enough to fit on slides?! :)
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Let our context be <code>(String, Int)</code> to denote host and non-standard port.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          We are going to <emphasis>inject</emphasis> this read-only dependency into our program, so that:
+          <itemizedlist>
+            <listitem>
+              <para>
+                values that require access to it can do so
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                the dependency is not explicitly passed around our program
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                our program maintains <emphasis>referential transparency</emphasis> &mdash; <emphasis>no variables</emphasis>, and therefore, the benefits that follow
+              </para>
+            </listitem>
+          </itemizedlist>
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Set up Libraries</title>
+    <itemizedlist>
+      <listitem>
+        <programlisting>
+// Ignore the context, lift into Read
+def point[A](a: => A): Read[A] =
+    Read(_ => a)</programlisting>
+      </listitem>
+      <listitem>
+        <programlisting>
+// Ignore the port
+def hostname[A](f: String => A): Read[A] =
+    Read((h, _) => f(h))</programlisting>
+      </listitem>
+      <listitem>
+        <programlisting>
+// Ignore the hostname
+def port[A](f: String => A): Read[A] =
+    Read((_, p) => f(p))</programlisting>
+      </listitem>
+    </itemizedlist>
+  </sect2>
 </sect1>
