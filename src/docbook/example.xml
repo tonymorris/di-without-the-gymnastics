@@ -15,11 +15,7 @@
     </listitem>
     <listitem>
       <para>
-        Let our context be <code>(String, Option[Int])</code> to denote host and non-standard port<footnote>
-          <para>
-            Let the standard port be <code>80</code>
-          </para>
-        </footnote>.
+        Let our context be <code>(String, Int)</code> to denote host and non-standard port.
       </para>
     </listitem>
     <listitem>
