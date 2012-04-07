@@ -50,7 +50,12 @@
       <listitem>
         <programlisting>
 // Connection reader
-case class CRead[A](rd: Connection => A)</programlisting>
+case class CRead[A](rd: Connection => A)
+
+val getPassword: CRead[String] = CRead(_.query("SELECT pwd FROM user"))
+def validatePassword(p: String): CRead[Boolean] = getPassword map (_ == p)
+def setPassword(p: String): CRead[Unit] = CRead(_.execute("UPDATE user " + p))
+        </programlisting>
       </listitem>
       <listitem>
         <programlisting>
