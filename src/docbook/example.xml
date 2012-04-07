@@ -17,7 +17,7 @@
       </listitem>
       <listitem>
         <para>
-          Let our context be <code>(String, Int)</code> to denote host and non-standard port.
+          Let our context be a database <code>Connection</code>.
         </para>
       </listitem>
       <listitem>
@@ -49,21 +49,14 @@
     <itemizedlist>
       <listitem>
         <programlisting>
+// Connection reader
+case class CRead[A](rd: Connection => A)</programlisting>
+      </listitem>
+      <listitem>
+        <programlisting>
 // Ignore the context, lift into Read
-def point[A](a: => A): Read[A] =
-    Read(_ => a)</programlisting>
-      </listitem>
-      <listitem>
-        <programlisting>
-// Ignore the port
-def hostname[A](f: String => A): Read[A] =
-    Read((h, _) => f(h))</programlisting>
-      </listitem>
-      <listitem>
-        <programlisting>
-// Ignore the hostname
-def port[A](f: String => A): Read[A] =
-    Read((_, p) => f(p))</programlisting>
+def point[A](a: => A): CRead[A] =
+    CRead(_ => a)</programlisting>
       </listitem>
     </itemizedlist>
   </sect2>
