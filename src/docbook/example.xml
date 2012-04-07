@@ -54,7 +54,7 @@ case class CRead[A](rd: Connection => A)</programlisting>
       </listitem>
       <listitem>
         <programlisting>
-// Ignore the context, lift into Read
+// Ignore the Connection context, lift into Read
 def point[A](a: => A): CRead[A] =
     CRead(_ => a)</programlisting>
       </listitem>
