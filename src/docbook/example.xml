@@ -15,12 +15,12 @@
     </listitem>
     <listitem>
       <para>
-        Let our context = <code>(String, Int)</code> to denote host and port.
+        Let our context be <code>(String, Int)</code> to denote host and port.
       </para>
     </listitem>
     <listitem>
       <para>
-        We are going to <emphasis>inject</emphasis> this read-only dependency into our program, so that values that:
+        We are going to <emphasis>inject</emphasis> this read-only dependency into our program, so that:
         <itemizedlist>
           <listitem>
             <para>
