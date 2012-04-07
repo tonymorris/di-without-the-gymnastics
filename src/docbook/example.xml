@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"[
+    <!ENTITY ellipsis "&#8230;">
+    ]>
+
+<sect1 id="Example" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Example</title>
+  <itemizedlist>
+    <listitem>
+      <para>
+        An example good enough to demonstrate the point, but small enough to fit on slides! :)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Let our context = <code>(String, Int)</code> to denote host and port.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        We are going to <emphasis>inject</emphasis> this read-only dependency into our program, so that values that:
+        <itemizedlist>
+          <listitem>
+            <para>
+              values that require access to it can do so
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              the dependency is not explicitly passed around our program
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              our program maintains <emphasis>referential transparency</emphasis> &mdash; <emphasis>no variables</emphasis>, and therefore, the benefits that follow
+            </para>
+          </listitem>
+        </itemizedlist>
+      </para>
+    </listitem>
+  </itemizedlist>
+</sect1>

@@ -11,6 +11,7 @@
   <xi:include href="introduction.xml"/>
   <xi:include href="whatisdi.xml"/>
   <xi:include href="generalisingprograms.xml"/>
+  <xi:include href="example.xml"/>
   <xi:include href="PGPKEY.xml"/>
   <xi:include href="CC-BY-SA.xml"/>
 </article>
