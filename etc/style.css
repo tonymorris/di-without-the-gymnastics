@@ -148,6 +148,10 @@ p b, .bold {
   color: #333;
 }
 
+em {
+  font-style: italic;
+}
+
 .toc p {
   margin: 0;
 }
