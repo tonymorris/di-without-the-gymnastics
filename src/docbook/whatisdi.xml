@@ -34,11 +34,6 @@
           </footnote>
         </para>
       </listitem>
-      <listitem>
-        <para>
-          The rest is uninteresting implementation detail and quasi-arguments over XML.
-        </para>
-      </listitem>
     </itemizedlist>
   </sect2>
   <sect2>
@@ -46,12 +41,12 @@
     <itemizedlist>
       <listitem>
         <para>
-          Personally, I have seen <emphasis>all sorts</emphasis> of gymnastics in an effort to provide this guarantee.
+          &lt;Personally/>, I have seen <emphasis>all sorts</emphasis> of &lt;gymnastics sorts="all"/> in an effort to provide this guarantee.
         </para>
       </listitem>
       <listitem>
         <para>
-          After all, if it is broken at any time, the program <emphasis role="bold">crashes spectacularly</emphasis>.
+          After all, if this guarantee is broken at any time, the program <emphasis role="bold">crashes spectacularly</emphasis>.
         </para>
       </listitem>
       <listitem>
