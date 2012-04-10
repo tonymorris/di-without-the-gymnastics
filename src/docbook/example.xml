@@ -97,7 +97,7 @@ for {
       </listitem>
       <listitem>
         <para>
-          <code>modL</code> is a <emphasis>lens operator</emphasis> for working with immutable records.
+          <code>modL</code> is a <emphasis>lens operator</emphasis> for working with immutable records such as <code>Wibble</code>s.
         </para>
       </listitem>
     </itemizedlist>
