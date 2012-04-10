@@ -17,7 +17,12 @@
       </listitem>
       <listitem>
         <para>
-          Let our context be a database <code>Connection</code>.
+          We can do this <emphasis>for any value</emphasis> in our context.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Let our context be a hostname and port pair, <code>(String, Int)</code>.
         </para>
       </listitem>
       <listitem>
@@ -49,19 +54,51 @@
     <itemizedlist>
       <listitem>
         <programlisting>
-// Connection reader
-case class CRead[A](rd: Connection => A)
-
-val getPassword: CRead[String] = CRead(_.query("SELECT pwd FROM user"))
-def validatePassword(p: String): CRead[Boolean] = getPassword map (_ == p)
-def setPassword(p: String): CRead[Unit] = CRead(_.execute("UPDATE user " + p))
-        </programlisting>
+// Hostname+port reader
+case class CRead[A](rd: (String, Int) => A) {
+  def map(f: A => B): CRead[B] =
+    sys.error("todo")
+  def flatMap(f: A => CRead[B]): CRead[B] =
+    sys.error("todo")
+}</programlisting>
       </listitem>
       <listitem>
         <programlisting>
-// Ignore the Connection context, lift into Read
+// Ignore the context, lift into CRead
 def point[A](a: => A): CRead[A] =
     CRead(_ => a)</programlisting>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Usage example</title>
+    <programlisting>
+for {
+  _ &lt;- log("connect: %s:%s")
+  w &lt;- getWibble
+  val v = w modL biggen
+  u &lt;- setWibble
+  _ &lt;- log("disconnect %s:%s")
+} yield u      
+    </programlisting>
+    <para>
+      Some points of note:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <code>log: String => CRead[X]</code>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>getWibble/setWibble: CRead[Wibble]</code>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>modL</code> is a <emphasis>lens operator</emphasis> for working with immutable records.
+        </para>
       </listitem>
     </itemizedlist>
   </sect2>
