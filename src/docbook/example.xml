@@ -77,17 +77,17 @@ for {
   _ &lt;- log("connect: %s:%s")
   w &lt;- getWibble
   val v = w modL biggen
-  u &lt;- setWibble
+  u &lt;- setWibble(v)
   _ &lt;- log("disconnect %s:%s")
 } yield u      
     </programlisting>
     <para>
-      Some points of note:
+      Some important points of note:
     </para>
     <itemizedlist>
       <listitem>
         <para>
-          <code>log: String => CRead[X]</code>
+          <code>log: String => CRead[X]</code> with a catch!
         </para>
       </listitem>
       <listitem>
@@ -102,4 +102,47 @@ for {
       </listitem>
     </itemizedlist>
   </sect2>
+  <sect2>
+    <title>&ellipsis;and it's not all that different to our everyday programming</title>
+    <example>
+      <title>The same code in C#/LINQ using monad comprehension syntax</title>
+      <programlisting>
+from a in Log("connect: %s:%s")
+from w in GetWibble
+from u in SetWibble(w.ModL(Biggen))
+from b in Log("disconnect %s:%s")
+select u</programlisting>
+    </example>
+    <itemizedlist>
+      <listitem>
+        <para>
+          What Scala calls:
+          <itemizedlist>
+            <listitem>
+              <para>
+                <code>flatMap</code>, C# calls <code>SelectMany</code>
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                <code>map</code>, C# calls <code>Select</code>
+              </para>
+            </listitem>
+          </itemizedlist>
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>&ellipsis;and in Haskell</title>
+     <example>
+      <title>Using Haskell monad comprehension syntax</title>
+      <programlisting>
+do log "connect: %s:%s"
+   w &lt;- getWibble
+   u &lt;- setWibble (w modL biggen)
+   log "disconnect %s:%s"
+   return u</programlisting>
+    </example>
+ </sect2>
 </sect1>
