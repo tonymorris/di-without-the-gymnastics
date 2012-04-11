@@ -24,7 +24,12 @@
     </listitem>
     <listitem>
       <para>
-        We will use mostly Scala.
+        I am going to ask you to hold a <emphasis>lot more</emphasis> in your head, with the intention of following it up with concrete examples later.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        We will use mostly Scala for code listings.
       </para>
     </listitem>
     <listitem>
