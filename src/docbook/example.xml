@@ -55,18 +55,18 @@
       <listitem>
         <programlisting>
 // Hostname+port reader
-case class CRead[A](rd: (String, Int) => A) {
-  def map(f: A => B): CRead[B] =
+case class CReader[A](rd: (String, Int) => A) {
+  def map(f: A => B): CReader[B] =
     sys.error("todo")
-  def flatMap(f: A => CRead[B]): CRead[B] =
+  def flatMap(f: A => CReader[B]): CReader[B] =
     sys.error("todo")
 }</programlisting>
       </listitem>
       <listitem>
         <programlisting>
-// Ignore the context, lift into CRead
-def point[A](a: => A): CRead[A] =
-    CRead(_ => a)</programlisting>
+// Ignore the context, lift into CReader
+def point[A](a: => A): CReader[A] =
+    CReader(_ => a)</programlisting>
       </listitem>
     </itemizedlist>
   </sect2>
@@ -86,12 +86,12 @@ for {
     <itemizedlist>
       <listitem>
         <para>
-          <code>log: String => CRead[X]</code> with a catch!
+          <code>log: String => CReader[X]</code> with a catch!
         </para>
       </listitem>
       <listitem>
         <para>
-          <code>getWibble/setWibble: CRead[Wibble]</code>
+          <code>getWibble/setWibble: CReader[Wibble]</code>
         </para>
       </listitem>
       <listitem>

@@ -1,10 +1,11 @@
-personal_ws-1.1 en 45 
+personal_ws-1.1 en 47 
 organization
 waivable
 AUTHORIZED
 monad
 synching
 Ssection
+Nullability
 functor
 phonogram
 sublicense
@@ -31,6 +32,7 @@ emphasize
 FP
 dramatico
 LINQ
+nullable
 MERCHANTIBILITY
 CCPL
 relicensing

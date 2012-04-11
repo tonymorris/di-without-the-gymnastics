@@ -73,16 +73,16 @@ case class Identity[A](a: A) {
   <sect2>
     <title>Reader</title>
     <programlisting>
-case class Read[A](rd: Context => A) {
-  def map[B](f: A => B): Read[B] =
-      Read(f compose rd)
-  def flatMap[B](f: A => Read[B]): Read[B] =
-      Read(c => f(rd(c)) rd c)
+case class Reader[A](rd: Context => A) {
+  def map[B](f: A => B): Reader[B] =
+      Reader(f compose rd)
+  def flatMap[B](f: A => Reader[B]): Reader[B] =
+      Reader(c => f(rd(c)) rd c)
 }</programlisting>
     <itemizedlist>
       <listitem>
         <para>
-          Now values that were once typed <code>T</code> becomes values with the type <code>Read[T]</code>.
+          Now values that were once typed <code>T</code> becomes values with the type <code>Reader[T]</code>.
         </para>
       </listitem>
       <listitem>

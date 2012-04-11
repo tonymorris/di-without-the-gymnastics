@@ -24,7 +24,7 @@
     <itemizedlist>
       <listitem>
         <para>
-          We have seen a read-only Context (often called Reader) over a value (<code>A</code>)
+          We have seen a read-only Context (called Reader) over a value (<code>A</code>)
         </para>
         <para>
           <code>Context => A</code>
@@ -44,7 +44,7 @@
       </listitem>
       <listitem>
         <para>
-          Read/Write Context (often called State) over a value (<code>A</code>)
+          Read/Write Context (called State) over a value (<code>A</code>)
         </para>
         <para>
           <code>Context => (A, Context)</code>

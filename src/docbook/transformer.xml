@@ -8,7 +8,111 @@
 <sect1 id="Transformer" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Contexts All the Way Down</title>
   <sect2>
-    <title>TODO</title>
-    <para>TODO</para>
+    <title>Transformers</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          We have seen read-only contexts and read-write contexts, but what about others?
+          <itemizedlist>
+            <listitem>
+              <para>
+                Nullability (<code>Option</code>)
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                Non-determinism (<code>List</code>)
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                Logging (<code>Writer</code>)
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                I/O
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                Exception handling (<code>Either[Throwable, _]</code>)
+              </para>
+            </listitem>
+          </itemizedlist>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Importantly, what if we want to <emphasis>combine</emphasis> two contexts to create a new context?
+          <itemizedlist>
+            <listitem>
+              <para>
+                We might want to read a context and compute a nullable (<code>Option</code>) value. Can we combine these two contexts?
+              </para>
+            </listitem>
+          </itemizedlist>
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>ReaderT</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Was:
+        </para>
+        <programlisting>
+case class Reader[A](rd: Context => A)</programlisting>
+      </listitem>
+      <listitem>
+        <para>
+          Now:
+        </para>
+        <programlisting>
+case class ReaderT[F[_], A](rd: Context => F[A])</programlisting>
+        <itemizedlist>
+          <listitem>
+            <para>
+              <code>ReaderT</code> has a <code>map</code> method if <code>F</code> has a <code>map</code> method
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <code>ReaderT</code> has a <code>flatMap</code> method if <code>F</code> has a <code>flatMap</code> method
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <code>type Reader[A] = ReaderT[Identity, A]</code>
+            </para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Stacking It Up</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Remember those <code>log</code> statements? They have <code>F=Writer</code> stacked in the context.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Not only are we injecting with composition, but injecting into a stack of contexts that can be chosen specific to the problem.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          We can do it with read-write contexts (<code>State</code>) too.
+          <programlisting>
+case class StateT[Cx, F[_], A](run: Cx => F[(Cx, A)])
+type State[Cx, A] = StateT[Cx, Identity, A]</programlisting>
+        </para>
+      </listitem>
+    </itemizedlist>
   </sect2>
 </sect1>
