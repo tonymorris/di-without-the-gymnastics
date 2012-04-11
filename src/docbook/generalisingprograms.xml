@@ -92,6 +92,11 @@ case class Reader[A](rd: Context => A) {
       </listitem>
       <listitem>
         <para>
+          This concept of "accepting an argument" is often referred to as <emphasis>Inversion of Control</emphasis>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           &ellipsis;and most importantly&ellipsis;
         </para>
       </listitem>
