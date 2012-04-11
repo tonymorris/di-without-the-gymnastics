@@ -1,12 +1,37 @@
+Structure Summary
+=================
+* Figure out how many saw Runar's talk, know Scala
+* Have heard of monads and monad transformers?
+* Buckle in for some abstract thinking
+* State the essence of DI; read-only context or read-write context
+* DI is just a fancy global variable -- let's pass the arguments explicitly
+* Generalising a program to the Identity monad
+* Generalising a program to the Reader monad
+* Example of hostname+port Reader (String, Int) =>
+* Show C# example
+* Show Haskell example
+* But what if we want read-write? State
+* Stop for Questions
+* Transformers
+* ReaderT
+* StateT
+* Arbitrary monad stacking
+* Scepticism
+* Reader/Writer/State monad transformer
+
 PhillyETE
+---------
 http://phillyemergingtech.com/2012/sessions/dependency-injection-without-the-gymnastics-functional-programming-applied
 
 Dependency Injection on [scala-debate]
+--------------------------------------
 http://www.scala-lang.org/node/10914#comment-47427
 
 Configuration Without the Bugs and Gymnastics
+---------------------------------------------
 Slides: http://dl.dropbox.com/u/7810909/docs/reader-monad/reader-monad/html/index.html
 Video:  http://vimeo.com/20674558
 
 Dead Simple Dependency Injection
+--------------------------------
 www.youtube.com/watch?v=ZasXwtTRkio

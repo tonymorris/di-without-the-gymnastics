@@ -7,18 +7,48 @@
 
 <sect1 id="RWST" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Reader/Writer/State Transformer</title>
-  <subtitle>The King of Injecting Dependencies</subtitle>
+  <subtitle>The Essence of Injecting Dependencies</subtitle>
   <sect2>
     <title>Putting it All Together</title>
     <itemizedlist>
       <listitem>
         <para>
-          Dependency Injection is, at its essence, a specialisation of the reader/writer/state monad transformer.
+          Dependency Injection is, quite concisely, a specialisation of the reader/writer/state monad transformer.
         </para>
       </listitem>
       <listitem>
         <para>
-          The what what transformer?
+          The <emphasis>what what</emphasis> transformer?
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The transformer that is stacked with <code>Reader</code>, <code>Writer</code>, <code>State</code> and an arbitrary context
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Reminder</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <code>case class Reader[R, A](f: R => A)</code>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>case class Writer[W, A](w: (W, A))</code>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>case class State[S, A](f: S => (A, S))</code>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Reader+Writer+State?
         </para>
       </listitem>
     </itemizedlist>
@@ -38,7 +68,7 @@ case class ReaderWriterStateT[R, W, S, F[_], A](
     }
 
   def flatMap[B](f: A => ReaderWriterStateT[R, W, S, F, B])
-                (implicit F: Bind[F], W: Semigroup[W])
+                (implicit F: FlatMap[F], W: Semigroup[W])
       : ReaderWriterStateT[R, W, S, F, B] =
     ReaderWriterStateT {
       case (r, s) => F.flatMap(run(r, s)) {
@@ -108,9 +138,10 @@ object StateT {
 case class Id[A](a: A)
 
 object Id {
-  implicit val IdMonad: Monad[Id] =
-    new Monad[Id] {
-      def point[A](a: => A) = Id(a)
+  implicit val IdFlatMap: FlatMap[Id] =
+    new FlatMap[Id] {
+      def fmap[A, B](f: A => B) =
+        i => Id(f(i.a))
       def bind[A, B](f: A => Id[B]) =
         i => f(i.a)
     }
@@ -122,7 +153,7 @@ trait Functor[F[_]] {
     fmap(f)(a)
 }
 
-trait Bind[F[_]] extends Functor[F] {
+trait FlatMap[F[_]] extends Functor[F] {
   def bind[A, B](f: A => F[B]): F[A] => F[B]
   def flatMap[A, B](a: F[A])(f: A => F[B]): F[B] =
     bind(f)(a)
@@ -150,11 +181,11 @@ instance Functor f =>
     ReaderWriterStateT $
       fmap (\(w, a, s) -> (w, f a, s)) . x
 
-instance (Bind f, Semigroup w) =>
-  Bind (ReaderWriterStateT r w s f) where
-  bind f (ReaderWriterStateT x) =
+instance (FlatMap f, Semigroup w) =>
+  FlatMap (ReaderWriterStateT r w s f) where
+  flatMap f (ReaderWriterStateT x) =
     ReaderWriterStateT $ \(r, s) ->
-      bind (\(w1, a, s1) ->
+      flatMap (\(w1, a, s1) ->
         fmap (\(w2, b, s2) ->
           (op w1 w2, b, s2))
           (run (f a) (r, s1))) (x (r, s))
@@ -197,11 +228,11 @@ newtype Id a = Id a
 instance Functor Id where
   fmap f (Id a) = Id (f a)
 
-instance Bind Id where
-  bind f (Id a) = f a
+instance FlatMap Id where
+  flatMap f (Id a) = f a
 
-class Functor f => Bind f where
-  bind :: (a -> f b) -> f a -> f b
+class Functor f => FlatMap f where
+  flatMap :: (a -> f b) -> f a -> f b
 
 class Semigroup a where
   op :: a -> a -> a
