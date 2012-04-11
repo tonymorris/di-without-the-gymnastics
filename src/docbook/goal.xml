@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"[
+    <!ENTITY ellipsis "&#8230;">
+    ]>
+
+<sect1 id="Goal" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>The Real Goal</title>
+  <para>
+    The real goal is:
+    <itemizedlist>
+      <listitem>
+        <para>
+          to introduce you to some interesting and useful data structures
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          to introduce you to a not-so-beginner view of a programming technique (I like living on the edge &mdash; do you?) called <emphasis>pure functional programming</emphasis>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          to achieve these two goals by appealing to a problem you are likely already familiar with (DI)
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          it's going to look a bit like we are picking on DI, though this is not a goal (it does a spectacular job of that on its own)
+        </para>
+      </listitem>
+ </itemizedlist>
+  </para>
+</sect1>
