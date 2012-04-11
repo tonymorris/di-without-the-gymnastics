@@ -71,4 +71,42 @@ case class State[Cx, A](run: Cx => (A, Cx)) {
 }</programlisting>
     </para>
   </sect2>
+  <sect2>
+    <title>Better fix the program then innit?</title>
+    <programlisting>
+for {
+  _ &lt;- log("connect: %s:%s")
+  w &lt;- getWibble
+  val v = w modL biggen
+  u &lt;- setWibble(v)
+  _ &lt;- log("disconnect %s:%s")
+} yield u</programlisting>
+    <itemizedlist>
+      <listitem>
+        <para>
+          The program remains <emphasis role="bold">unchanged</emphasis> due to generalisation.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          However, now we can add our context-writes <emphasis>without introducing in-place variables</emphasis>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Add a Context Write</title>
+      <para>
+        We can change the port as the program runs, because we can change the context to read-write.
+      </para>
+      <programlisting>
+for {
+  _ &lt;- log("connect: %s:%s")
+  _ &lt;- setPort(80)
+  w &lt;- getWibble
+  val v = w modL biggen
+  u &lt;- setWibble(v)
+  _ &lt;- log("disconnect %s:%s")
+} yield u</programlisting>
+  </sect2>
 </sect1>

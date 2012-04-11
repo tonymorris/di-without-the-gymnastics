@@ -79,8 +79,7 @@ for {
   val v = w modL biggen
   u &lt;- setWibble(v)
   _ &lt;- log("disconnect %s:%s")
-} yield u      
-    </programlisting>
+} yield u</programlisting>
     <para>
       Some important points of note:
     </para>
