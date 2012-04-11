@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"[
+    <!ENTITY ellipsis "&#8230;">
+    ]>
 
 <sect1 id="Introduction" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Introduction</title>
-  <para>
-    An introduction to Reader, ReaderT, State and StateT monads to solve the problem that dependency injection sets out to solve.
-  </para>
+  <itemizedlist>
+    <listitem>
+      <para>
+        Runar went deep into the Reader monad to discuss dependency injection<footnote>
+          <para>
+            Dead-Simple Dependency Injection <ulink url="http://lanyrd.com/2012/nescala/sqygc/"/>
+          </para>
+        </footnote>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        I am going to fly-by the Reader monad, then enter a rapid climb, levelling out at the <code>StateT</code> monad transformer.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        Cleared for take-off&ellipsis;
+      </para>
+    </listitem>
+  </itemizedlist>
 </sect1>

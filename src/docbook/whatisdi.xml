@@ -27,11 +27,16 @@
       </listitem>
       <listitem>
         <para>
-          In both cases, the DI runtime guarantees that the context initialisation will occur at the right time &mdash; this is the essential guarantee of dependency injection.<footnote>
+          In both cases, the DI runtime guarantees that the context initialisation will occur at the right time &mdash; this is the essential promise of dependency injection.<footnote>
             <para>
               Dependency injection is just socially-acceptable global variables &mdash; Anon
             </para>
           </footnote>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The rest is uninteresting ceremony.
         </para>
       </listitem>
     </itemizedlist>
