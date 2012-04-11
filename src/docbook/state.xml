@@ -111,8 +111,13 @@ for {
   </sect2>
   <sect2>
     <title>Hammer Time</title>
-    <para>
-      Now is a good time to pause for questions.
-    </para>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="resources/lambda.png" format="PNG" align="center"/>
+      </imageobject>
+      <caption>
+        Now is a good time to pause for questions.
+      </caption>
+    </mediaobject>
   </sect2>
 </sect1>
