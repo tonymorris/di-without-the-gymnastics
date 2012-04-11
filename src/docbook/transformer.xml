@@ -115,4 +115,21 @@ type State[Cx, A] = StateT[Cx, Identity, A]</programlisting>
       </listitem>
     </itemizedlist>
   </sect2>
+  <sect2>
+    <title>&ellipsis; wait a minute &ellipsis; if <code>Option</code> has <code>flatMap</code> &ellipsis;</title>
+    <programlisting>
+      case class OptionState[Cx, F[_], A](run: StateT[Cx, Option, A])</programlisting>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Again, our program remains unchanged.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          We can stack <emphasis>indefinitely</emphasis>, thus injecting dependencies arbitrarily and with solid library support.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
 </sect1>
