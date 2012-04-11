@@ -73,7 +73,7 @@ case class State[Cx, A](run: Cx => (A, Cx)) {
   </sect2>
   <sect2>
     <title>Better fix the program then innit?</title>
-    <programlisting>
+    <programlisting id="StateUsage.programlisting">
 for {
   _ &lt;- log("connect: %s:%s")
   w &lt;- getWibble
@@ -99,7 +99,7 @@ for {
       <para>
         We can change the port as the program runs, because we can change to a read-write context easily and without affecting orthogonal program parts.
       </para>
-      <programlisting>
+      <programlisting id="StateUsageWithWrite.programlisting">
 for {
   _ &lt;- log("connect: %s:%s")
   _ &lt;- setPort(80) // context-write
