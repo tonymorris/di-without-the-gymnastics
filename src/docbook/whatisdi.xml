@@ -56,7 +56,7 @@
       </listitem>
       <listitem>
         <para>
-          Let's be honest, it never works consistently &mdash; it's just a global variable with all the usual dangers. <emphasis>Just sayin'</emphasis>.
+          Let's be honest, it never works consistently &mdash; it's just a global variable with all the usual dangers.
         </para>
       </listitem>
       <listitem>

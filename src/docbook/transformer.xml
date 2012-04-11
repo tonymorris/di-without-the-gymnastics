@@ -127,6 +127,13 @@ case class OptionState[Cx, F[_], A](run: StateT[Cx, Option, A])</programlisting>
       </listitem>
       <listitem>
         <para>
+          List has <code>flatMap</code> too!
+     <programlisting>
+case class ListReader[F[_], A](rd: ReaderT[List, A])</programlisting>
+       </para>
+      </listitem>
+      <listitem>
+        <para>
           We can stack <emphasis>indefinitely</emphasis>, thus injecting dependencies arbitrarily and with solid library support.
         </para>
       </listitem>

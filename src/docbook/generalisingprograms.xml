@@ -8,7 +8,7 @@
 <sect1 id="GeneralisingPrograms" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Generalising Programs</title>
   <sect2>
-    <title>A Trivial Program</title>
+    <title>A Trivial Scala Program</title>
     <programlisting>
 val a = e1
 val b = e2(a)
