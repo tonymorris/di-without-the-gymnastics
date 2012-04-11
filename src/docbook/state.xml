@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"[
+    <!ENTITY ellipsis "&#8230;">
+    ]>
+
+<sect1 id="State" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>State</title>
+  <sect2>
+    <title>But then the TPS report comes in&ellipsis;</title>
+    <para>&ellipsis; and the product manager wants the ability to allow the user to dynamically synergise the port number on the fly</para>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="resources/george-carlin.jpg" format="JPG" align="center"/>
+      </imageobject>
+      <caption>
+        "Oh no! More stuff!" &mdash; George Carlin
+      </caption>
+    </mediaobject>
+  </sect2>
+</sect1>
