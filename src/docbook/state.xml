@@ -19,4 +19,56 @@
       </caption>
     </mediaobject>
   </sect2>
+  <sect2>
+    <title>Injecting a Read/Write Context</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          We have seen a read-only Context (often called Reader) over a value (<code>A</code>)
+        </para>
+        <para>
+          <code>Context => A</code>
+          <itemizedlist>
+            <listitem>
+              <para>
+                is a functor &mdash; has a useful <code>map</code> method
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                is a monad &mdash; has a useful <code>flatMap</code> method
+              </para>
+            </listitem>
+          </itemizedlist>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Read/Write Context (often called State) over a value (<code>A</code>)
+        </para>
+        <para>
+          <code>Context => (A, Context)</code>
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>State Monad</title>
+    <para>
+      <code>State</code> is a monad too!
+      <programlisting>
+case class State[Cx, A](run: Cx => (A, Cx)) {
+  def map[B](f: A => B): State[Cx, B] =
+      State(x => {
+        val (a, t) = run(x)
+        (f(a), t)
+      })
+  def flatMap[B](f: A => State[Cx, B]): State[Cx, B] =
+      State(x => {
+        val (a, t) = run(x)
+        f(a) run t
+      })
+}</programlisting>
+    </para>
+  </sect2>
 </sect1>
