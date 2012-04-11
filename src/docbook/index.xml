@@ -14,6 +14,7 @@
   <xi:include href="example.xml"/>
   <xi:include href="state.xml"/>
   <xi:include href="transformer.xml"/>
+  <xi:include href="sceptic.xml"/>
   <xi:include href="PGPKEY.xml"/>
   <xi:include href="CC-BY-SA.xml"/>
 </article>

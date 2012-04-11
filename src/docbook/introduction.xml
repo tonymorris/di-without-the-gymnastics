@@ -19,7 +19,7 @@
     </listitem>
     <listitem>
       <para>
-        I am going to fly-by the Reader monad, then enter a rapid climb, levelling out at the <code>StateT</code> monad transformer.
+        I am going to fly-by the Reader monad, then enter a rapid climb, levelling out at the <code>ReaderWriterStateT</code> monad transformer.
       </para>
     </listitem>
     <listitem>

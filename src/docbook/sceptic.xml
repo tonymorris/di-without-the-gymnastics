@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"[
+    <!ENTITY ellipsis "&#8230;">
+    ]>
+
+<sect1 id="Sceptic" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Sceptical?</title>
+  <para>
+    You are now probably one of three people:
+    <itemizedlist>
+      <listitem>
+        <para>
+          WTF is this guy smokin'? Give me my XML, variables, bugs, frameworks and really big JAR files back right now!
+        </para>
+      </listitem>
+        <listitem>
+        <para>
+          I wonder what you just said; can I see some code now?
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          *yawn* seen it all before, been doing it for years, when is lunch?
+        </para>
+      </listitem>
+    </itemizedlist>
+  </para>
+</sect1>
