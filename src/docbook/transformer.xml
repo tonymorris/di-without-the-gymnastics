@@ -129,7 +129,7 @@ case class OptionState[Cx, F[_], A](run: StateT[Cx, Option, A])</programlisting>
         <para>
           Reader has <code>flatMap</code> too!
      <programlisting>
-case class ReaderState[F[_], A](run: StateT[Cx, Option, A])</programlisting>
+case class ReaderState[F[_], A](run: StateT[Cx, Reader, A])</programlisting>
        </para>
       </listitem>
       <listitem>

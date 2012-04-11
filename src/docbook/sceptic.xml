@@ -7,24 +7,33 @@
 
 <sect1 id="Sceptic" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Sceptical?</title>
-  <para>
-    You are now probably one of three people:
     <itemizedlist>
       <listitem>
         <para>
-          WTF is this guy smokin'? Give me my XML, variables, bugs, frameworks and really big JAR files back right now!
-        </para>
-      </listitem>
-        <listitem>
-        <para>
-          I wonder what you just said; can I see some code now?
+          You are now probably one of three people:
+          <itemizedlist>
+            <listitem>
+              <para>
+                WTF is this guy smokin'? Give me my XML, variables, bugs, frameworks and really big JAR files back right now!
+              </para>
+            </listitem>
+              <listitem>
+              <para>
+                I wonder what you just said; can I see some code now?
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                <emphasis>yawn</emphasis> seen it all before, been doing it for years, when is lunch?
+              </para>
+            </listitem>
+          </itemizedlist>
         </para>
       </listitem>
       <listitem>
         <para>
-          *yawn* seen it all before, been doing it for years, when is lunch?
+          To understand this subject more deeply, there are plenty of resources and people to help &mdash; just ask!
         </para>
       </listitem>
     </itemizedlist>
-  </para>
 </sect1>
