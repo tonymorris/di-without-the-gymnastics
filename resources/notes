@@ -3,6 +3,7 @@ Structure Summary
 * Figure out how many saw Runar's talk, know Scala
 * Have heard of monads and monad transformers?
 * Buckle in for some abstract thinking
+* Ask ***LOTS*** of questions
 * State the essence of DI; read-only context or read-write context
 * DI is just a fancy global variable -- let's pass the arguments explicitly
 * Generalising a program to the Identity monad
