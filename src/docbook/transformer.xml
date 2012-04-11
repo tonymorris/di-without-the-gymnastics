@@ -118,11 +118,11 @@ type State[Cx, A] = StateT[Cx, Identity, A]</programlisting>
   <sect2>
     <title>&ellipsis; wait a minute &ellipsis; if <code>Option</code> has <code>flatMap</code> &ellipsis;</title>
     <programlisting>
-      case class OptionState[Cx, F[_], A](run: StateT[Cx, Option, A])</programlisting>
+case class OptionState[Cx, F[_], A](run: StateT[Cx, Option, A])</programlisting>
     <itemizedlist>
       <listitem>
         <para>
-          Again, our program remains unchanged.
+          Again, our program client remains unchanged, running through its for-comprehension.
         </para>
       </listitem>
       <listitem>
