@@ -91,7 +91,7 @@ defaultConfig n t =
          , ("monospace.font.family", "Courier")
          , ("title.font.family", "Gentium Basic")
          , ("navig.showtitles", "0")
-         , ("chunk.first.sections", "1")
+         , ("chunk.tocs.and.lots", "1")
          ]
          defaultVersions
          "https://raw.github.com/tonymorris/docbook-dependencies/2.0.0"
