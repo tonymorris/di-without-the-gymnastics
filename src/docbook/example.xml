@@ -139,7 +139,8 @@ select u</programlisting>
       <programlisting>
 do log "connect: %s:%s"
    w &lt;- getWibble
-   u &lt;- setWibble (w modL biggen)
+   let v = w modL biggen
+   u &lt;- setWibble v
    log "disconnect %s:%s"
    return u</programlisting>
     </example>

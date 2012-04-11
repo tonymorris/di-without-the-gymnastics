@@ -97,12 +97,12 @@ case class ReaderT[F[_], A](rd: Context => F[A])</programlisting>
     <itemizedlist>
       <listitem>
         <para>
-          Remember those <code>log</code> statements? <link linkend="ReaderUsage.programlisting">[1]</link> <link linkend="StateUsage.programlisting">[2]</link> <link linkend="StateUsageWithWrite.programlisting">[3]</link> They have <code>F=Writer</code> stacked in the context.
+          Remember those <code>log</code> statements? <link linkend="ReaderUsage.programlisting">[1]</link> <link linkend="StateUsage.programlisting">[2]</link> <link linkend="StateUsageWithWrite.programlisting">[3]</link> They have <code>F=Writer</code> stacked in the context &mdash; just another context!
         </para>
       </listitem>
       <listitem>
         <para>
-          Not only are we injecting with composition, but injecting into a stack of contexts that can be chosen specific to the problem.
+          Not only are we injecting with composition, but injecting into a stack of contexts that can be chosen specific to the problem at hand.
         </para>
       </listitem>
       <listitem>
