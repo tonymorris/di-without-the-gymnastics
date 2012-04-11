@@ -102,7 +102,7 @@ for {
       <programlisting>
 for {
   _ &lt;- log("connect: %s:%s")
-  _ &lt;- setPort(80)
+  _ &lt;- setPort(80) // context-write
   w &lt;- getWibble
   val v = w modL biggen
   u &lt;- setWibble(v)
