@@ -1,4 +1,4 @@
-personal_ws-1.1 en 40 
+personal_ws-1.1 en 42 
 organization
 waivable
 AUTHORIZED
@@ -8,10 +8,12 @@ Ssection
 phonogram
 sublicense
 Docbook
+synergise
 Scala
 recognizably
 Licence
 ShareAlike
+TPS
 TODO
 pre
 NONINFRINGEMENT
