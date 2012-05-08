@@ -421,7 +421,7 @@ web c =
                         f <- readFile p
                         let z = replace' f [("$TITLE", title c), ("$NAME", name c)]
                         writeFile (build </> p') z) h
-     r <- findpi always ((.!.) $ extensionEq "html") webDir
+     r <- findpi ((.!.) $ extensionEq "html") always webDir
      p' <- filterM doesFileExist r
      mapM_ (\p -> let z = joinPath . drop (length . splitPath $ webDir) . splitPath $ p 
                   in do mkdir (build </> takeDirectory z)
@@ -457,7 +457,7 @@ rel =
 allSgml ::
   IO [FilePath]
 allSgml =
-  findpi always (extensionEq "xml") docbooksrc
+  findpi (extensionEq "xml") always docbooksrc
 
 aspell ::
   String
