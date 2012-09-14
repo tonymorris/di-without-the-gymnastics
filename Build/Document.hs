@@ -415,14 +415,14 @@ web ::
   -> IO ExitCode
 web c =
   alll c >->
-  do h <- findi (extensionEq "html") always webDir
+  do h <- findpi (extensionEq "html") always webDir
      mapM_ (\p -> let p' = joinPath . drop (length . splitPath $ webDir) . splitPath $ p
                       d = takeDirectory p'
                   in do mkdir (build </> d)
                         f <- readFile p
                         let z = replace' f [("$TITLE", title c), ("$NAME", name c)]
                         writeFile (build </> p') z) h
-     r <- findi ((.!.) $ extensionEq "html") always webDir
+     r <- findpi ((.!.) $ extensionEq "html") always webDir
      p' <- filterM doesFileExist r
      mapM_ (\p -> let z = joinPath . drop (length . splitPath $ webDir) . splitPath $ p 
                   in do mkdir (build </> takeDirectory z)
@@ -458,7 +458,7 @@ rel =
 allSgml ::
   IO [FilePath]
 allSgml =
-  findi (extensionEq "xml") always docbooksrc
+  findpi (extensionEq "xml") always docbooksrc
 
 aspell ::
   String
